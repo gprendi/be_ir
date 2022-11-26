@@ -1,4 +1,4 @@
-# import app
+import src.app
 
-# app = app.define_app()
-# app.run()
+app = app.define_app()
+app.run()
