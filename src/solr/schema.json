@@ -1,0 +1,155 @@
+{
+	"schema": {
+		"fields": [
+			{
+				"name": "name",
+				"type": "text_en",
+				"indexed": "true",
+				"stored": "true",
+				"required": "true"
+			},
+			{
+				"name": "manufacturer",
+				"type": "text_en",
+				"indexed": "true",
+				"stored": "true"
+			},
+			{
+				"name": "year",
+				"type": "pint",
+				"indexed": "true",
+				"stored": "true"
+			},
+			{
+				"name": "Cylinders",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Engine Stroke",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Cooling",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Valves",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Valves Per Cylinder",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Valve Configuration",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Compression Ratio",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Starter",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Fuel Requirements",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Fuel Type",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Compression Ratio (Secondary)",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Transmission Type",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Number Of Speeds",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Primary Drive (Rear Wheel)",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Front Tire (Full Spec)",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Rear Tire (Full Spec)",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Front Brake Type",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Rear Brake Type",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Wheelbase (in/mm)",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Fuel Capacity (gal/l)",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Model Type",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "BASE MSRP(US)",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "Warranty",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
+				"name": "__text__",
+				"type": "text_en",
+				"indexed": "true",
+				"stored": "true",
+				"multiValued": "true"
+			}
+		],
+		"copy-fields": [
+			{
+				"source": "*",
+				"dest": "__text__"
+			}
+		],
+		"name": "phconfig",
+		"version": "1.6"
+	}
+}

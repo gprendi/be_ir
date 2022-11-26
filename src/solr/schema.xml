@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="ph_config" version="1.6">
+<field name="name" type="string" indexed="true" stored="true" />
+<field name="manufacturer" type="manufacturer" indexed="true" stored="true"/>
+<field name="year" type="int" indexed="true" stored="true"/>
+
+<field name="Engine Type" type="string" indexed="true" />
+<field name="Cylinders" type="string" indexed="true" />
+<field name="Engine Stroke" type="string" indexed="true" />
+<field name="Cooling" type="string" indexed="true" />
+<field name="Valves" type="string" indexed="true" />
+<field name="Valves Per Cylinder" type="string" indexed="true" />
+<field name="Valve Configuration" type="string" indexed="true" />
+<field name="Compression Ratio" type="string" indexed="true" />
+<field name="Starter" type="string" indexed="true" />
+<field name="Fuel Requirements" type="string" indexed="true" />
+<field name="Fuel Type" type="string" indexed="true" />
+<field name="Compression Ratio (Secondary)" type="string" indexed="true" />
+
+<field name="Transmission Type" type="string" indexed="true" />
+<field name="Number Of Speeds" type="string" indexed="true" />
+<field name="Primary Drive (Rear Wheel)" type="string" indexed="true" />
+
+<field name="Front Tire (Full Spec)" type="string" indexed="true" />
+<field name="Rear Tire (Full Spec)" type="string" indexed="true" />
+
+<field name="Front Brake Type" type="string" indexed="true" />
+<field name="Rear Brake Type" type="string" indexed="true" />
+
+<field name="Wheelbase (in/mm)" type="string" indexed="true" />
+<field name="Fuel Capacity (gal/l)" type="string" indexed="true" />
+
+<field name="Model Type" type="string" indexed="true" />
+<field name="BASE MSRP(US)" type="string" indexed="true" />
+<field name="Warranty" type="string" indexed="true" />
+</schema>
