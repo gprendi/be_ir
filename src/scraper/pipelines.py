@@ -21,6 +21,8 @@ class ScraperPipeline:
     def process_item(self, item, spider):
         # flatten items
         item_ = {}
+        if not item.is_item(Bike):
+            return item
         
         bikeItem = Bike(item)
         specs = item['specs']
@@ -41,5 +43,4 @@ class ScraperPipeline:
 
 class ScraperPipeline2:
     def process_item(self, item, spider):
-        print("item 2", item)
         return item
