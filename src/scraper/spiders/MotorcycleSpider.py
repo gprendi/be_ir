@@ -86,5 +86,7 @@ class MotorcycleSpider(scrapy.Spider):
         
         
 
-        yield response.follow(specs, self.parse_specs)
+        yield response.follow(specs, self.parse_specs) 
+        
+
         
