@@ -10,9 +10,12 @@ from scraper.items.Bike import Bike
 
 def toInt(str):
     try:
-        return int(str)
-    except ValueError:
-        return None
+        return int(str) 
+    except ValueError:        
+        try:
+            return float(str)
+        except ValueError:
+            return None
 
 class ScraperPipeline:
     def process_item(self, item, spider):
