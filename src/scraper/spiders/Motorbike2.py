@@ -4,7 +4,7 @@ import scrapy
 
 from scraper.items.Bike2 import Bike2
 
-class MotorcycleSpider2(scrapy.spider):
+class MotorcycleSpider2(scrapy.Spider):
     # define a name 
     name = 'Motorcycle2'
     start_urls = ["https://www.trademe.co.nz/a/motors/motorbikes/motorbikes"]
@@ -14,7 +14,7 @@ class MotorcycleSpider2(scrapy.spider):
         return string.encode("ascii", "ignore").decode().replace(":", "").strip()
 
     # fourth step, we define a function to parse the data we want
-    def parse2(self, response):
+    def parse(self, response):
         # parse the bike page
         print(" resp link", response.url)
         # parse the city: css -> tmid="location"
@@ -26,6 +26,16 @@ class MotorcycleSpider2(scrapy.spider):
         road_costs_included = response.css('.tm-motors-search-card__on-road-costs::text').get()
         brand = response.css('.tm-motors-search-card__title::text').get()
 
+        yield {
+            'city': city,
+            'price': price,
+            'cc': cc, 
+            'kms' : kms,
+            'list_date' : list_date, 
+            'road_costs_included' : road_costs_included,
+            'brand' : brand,
+            'bike2': True
+        }
     
 
     def parse_price(self, response):
@@ -36,7 +46,7 @@ class MotorcycleSpider2(scrapy.spider):
         # after parsing the price, iterate over the list of prices
         for prices in price:
             # parse the price
-            yield response.follow(prices, self.parse2)
+            yield response.follow(prices, self.parse)
     
     def parse_brand(self, response):
         print("link", response.url)
@@ -80,7 +90,8 @@ class MotorcycleSpider2(scrapy.spider):
         cc = response.css('.tm-motors-search-card__engine-details::text').get()
         print("cc", cc)
         for ccs in cc:
-            yield response.follow(ccs, self.parse2)
+            print("css", ccs)
+            yield response.follow(ccs, self.parse)
         next_page = response.css('.o-pagination__link').get()
         print("next page::", next_page)
         for page in next_page:
@@ -91,7 +102,7 @@ class MotorcycleSpider2(scrapy.spider):
         kms = response.css('.tm-motors-search-card__body-odometer::text').get()
         print("kms", kms)
         for kmss in kms:
-            yield response.follow(kmss, self.parse2)
+            yield response.follow(kmss, self.parse)
         next_page = response.css('.o-pagination__link').get()
         print("next page::", next_page)
         for page in next_page:
@@ -102,7 +113,7 @@ class MotorcycleSpider2(scrapy.spider):
         list_date = response.css('.tm-motors-closing-time__font-weight::text').get()
         print("list date", list_date)
         for list_dates in list_date:
-            yield response.follow(list_dates, self.parse2)
+            yield response.follow(list_dates, self.parse)
         next_page = response.css('.o-pagination__link').get()
         print("next page::", next_page)
         for page in next_page:
@@ -113,7 +124,7 @@ class MotorcycleSpider2(scrapy.spider):
         road_costs_included = response.css('.tm-motors-search-card__on-road-costs::text').get()
         print("road costs included", road_costs_included)
         for road_costs_includeds in road_costs_included:
-            yield response.follow(road_costs_includeds, self.parse2)
+            yield response.follow(road_costs_includeds, self.parse)
         next_page = response.css('.o-pagination__link').get()
         print("next page::", next_page)
         for page in next_page:

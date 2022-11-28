@@ -20,6 +20,11 @@ def toInt(str):
 class ScraperPipeline:
     def process_item(self, item, spider):
         # flatten items
+        
+        item2 = ItemAdapter(item)
+        if not item2.is_item(Bike):
+            return item
+        
         item_ = {}
         
         bikeItem = Bike(item)

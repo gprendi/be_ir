@@ -1,6 +1,6 @@
 from scrapy.item import Item, Field
 
-class Bike2(item):
+class Bike2(Item):
     # define the fields for your item:
     city = Field()
     price = Field()
