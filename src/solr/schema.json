@@ -131,6 +131,11 @@
 				"indexed": "true"
 			},
 			{
+				"name": "Engine Type",
+				"type": "text_en",
+				"indexed": "true"
+			},
+			{
 				"name": "Warranty",
 				"type": "text_en",
 				"indexed": "true"
@@ -141,12 +146,23 @@
 				"indexed": "true",
 				"stored": "true",
 				"multiValued": "true"
+			},
+			{
+				"name": "__suggest__",
+				"type": "text_en",
+				"indexed": "true",
+				"stored": "true",
+				"multiValued": "true"
 			}
 		],
 		"copy-fields": [
 			{
 				"source": "*",
 				"dest": "__text__"
+			}, 
+			{
+				"source": "*",
+				"dest": "__suggest__"
 			}
 		],
 		"name": "phconfig",
