@@ -16,7 +16,7 @@ with open("../schema.json") as schemafile:
     data = data + '}'
     # data = json.dumps(data)
     # print(data)
-    resp = requests.post("http://localhost:8983/api/collections/motorcycles__/schema", data=data, headers={'Content-Type': 'application/json'})
+    resp = requests.post("http://localhost:8983/api/collections/motorcycles4/schema", data=data, headers={'Content-Type': 'application/json'})
     
     print("response", resp)
     print(resp.json())
