@@ -2,7 +2,7 @@
 
 import scrapy
 
-from scraper.items.Bike2 import Bike2
+from src.scraper.items.Bike2 import Bike2
 
 class MotorcycleSpider2(scrapy.Spider):
     # define a name 

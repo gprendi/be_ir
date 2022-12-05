@@ -1,6 +1,6 @@
 import scrapy
 
-from scraper.items.Bike import Bike
+from src.scraper.items.Bike import Bike
 
 class MotorcycleSpider(scrapy.Spider):
     name = 'Motorcycle'
@@ -20,7 +20,6 @@ class MotorcycleSpider(scrapy.Spider):
             yield response.follow(next_resp, self.parse_bike_page)
 
         # parse details
-        print(" resp link", response.url)
         name = response.css('.intro h2::text').get()
         item = Bike()
         item['name'] = name
@@ -51,10 +50,8 @@ class MotorcycleSpider(scrapy.Spider):
         
     def parse_manufacturer(self, response):
         bikes = response.css(".feature h2 a::attr(href)").getall()
-        print(" bikes ", bikes)
         for bike in bikes:
-            if ("price-quote" in bike):
-                print(" heyyy ")
+            
             yield response.follow(bike, self.parse_bike_page)
             
         next_page = response.css(".next::attr(href)").get()

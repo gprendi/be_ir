@@ -6,8 +6,14 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-from scraper.items.Bike import Bike
+from src.scraper.items.Bike import Bike
+from src.solr.api import api as solrapi
+import os
 
+host = os.environ.get('HOST') or "http://localhost:8983"
+
+collection = os.environ.get('COLLECTION') or "motorcycles"
+counter = 0
 def toInt(str):
     try:
         return int(str) 
@@ -17,13 +23,15 @@ def toInt(str):
         except ValueError:
             return None
 
+
 class ScraperPipeline:
+    
     def process_item(self, item, spider):
         # flatten items
-        
         item2 = ItemAdapter(item)
-        if not item2.is_item(Bike):
-            return item
+        
+        # if not item2.is_item(Bike):
+        #     return item
         
         item_ = {}
         
@@ -44,6 +52,12 @@ class ScraperPipeline:
         
         return item_
 
-class ScraperPipeline2:
+class SolrScraperPipeline:
+    
+    def __init__(self) -> None:
+        self.api = solrapi(host)
+        
     def process_item(self, item, spider):
+        print(self.api.index_docs(collection, item))
+        
         return item
