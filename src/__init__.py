@@ -1,4 +1,3 @@
-import src.app
+from src.app import define_app
 
-app = app.define_app()
-app.run()
+app = define_app()
