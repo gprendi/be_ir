@@ -1,0 +1,30 @@
+{
+    "config": {
+        "add-searchComponent": {
+            "name": "suggest",
+            "class": "solr.SuggestComponent",
+            "suggester": {
+                "name": "mySuggester",
+                "lookupImpl": "BlendedInfixLookupFactory",
+                "dictionaryImpl": "DocumentDictionaryFactory",
+                "field": "__suggest__",
+                "indexPath": "suggester_infix_dir",
+                "suggestAnalyzerFieldType": "text_en",
+                "buildOnStartup": "true",
+                "buildOnCommit": "true",
+                "highlight": "off"
+            }
+        },
+        "add-requestHandler": {
+            "name": "/suggest",
+            "class": "solr.SearchHandler",
+            "defaults": {
+                "suggest": "true",
+                "suggest.count": "10"
+            },
+            "components": [
+                "suggest"
+            ]
+        }
+    }
+}
