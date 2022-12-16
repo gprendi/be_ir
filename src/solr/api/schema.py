@@ -8,7 +8,7 @@ with open("../schema.json") as schemafile:
     cpyfields = obj['schema']['copy-fields']
     data = '{'
     for field in fields:
-        print ("field ",field.__str__() )
+    
         data = data + "'add-field':" + field.__str__() + ","
     
     for cpyfield in cpyfields:
