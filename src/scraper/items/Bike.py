@@ -9,5 +9,6 @@ class Bike(Item):
     photos= Field()
     videos= Field()
     specs = Field()
-    
+    link = Field()
+    main = Field()
     # name = scrapy.Field()

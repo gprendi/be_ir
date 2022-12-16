@@ -153,6 +153,26 @@
 				"indexed": "true",
 				"stored": "true",
 				"multiValued": "true"
+			},
+			{
+				"name": "link",
+				"type": "text_en",
+				"indexed": "true",
+				"multiValued": "false"
+			},
+			{
+				"name": "images",
+				"type": "text_en",
+				"indexed": "true",
+				"stored": "true",
+				"multiValued": "true"
+			},
+			{
+				"name": "desc",
+				"type": "text_en",
+				"indexed": "true",
+				"stored": "true",
+				"multiValued": "true"
 			}
 		],
 		"copy-fields": [

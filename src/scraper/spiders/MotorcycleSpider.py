@@ -26,6 +26,8 @@ class MotorcycleSpider(scrapy.Spider):
         spl = name.split()
         item['year'] = spl[0]
         item['manufacturer'] = spl[1]
+        item['link'] = response.url
+        item['main'] = True
         
         specs = {}
         
