@@ -1,0 +1,435 @@
+@prefix b: <http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/> .
+
+<http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82> rdf:type owl:Ontology ;
+                                                                           owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.cidoc-crm.org/cidoc-crm/P109_has_current_or_former_curator
+<http://www.cidoc-crm.org/cidoc-crm/P109_has_current_or_former_curator> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E78_Curated_Holding> ;
+                                                                        rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E74_Group> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P147_curated
+<http://www.cidoc-crm.org/cidoc-crm/P147_curated> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity> ;
+                                                  rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E78_Curated_Holding> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by
+<http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> ;
+                                                           rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by
+<http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> rdf:type owl:ObjectProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P2_has_type
+<http://www.cidoc-crm.org/cidoc-crm/P2_has_type> rdf:type owl:ObjectProperty .
+
+
+###  https://ontome.net/property/1263/namespace/47
+<https://ontome.net/property/1263/namespace/47> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> ;
+                                                rdfs:range <http://www.ics.forth.gr/isl/CRMdig/D13_Digital_Information_Carrier> ;
+                                                rdfs:label "L19storesOn" .
+
+
+###  https://purl.org/episa/archonto/data_object/DOP7
+<https://purl.org/episa/archonto/data_object/DOP7> rdf:type owl:ObjectProperty .
+
+
+###  https://purl.org/episa/archonto/link2data_object/L2DO
+<https://purl.org/episa/archonto/link2data_object/L2DO> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> ;
+                                                        rdfs:range <https://purl.org/episa/archonto/data_object/DOE8> .
+
+
+###  https://schema.org/BroadcastEvent
+<https://schema.org/BroadcastEvent> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :TV_Show ;
+                                    rdfs:range a:Film_Festival_Edition .
+
+
+###  https://schema.org/associatedMedia
+<https://schema.org/associatedMedia> rdf:type owl:ObjectProperty .
+
+
+###  https://schema.org/mentions
+<https://schema.org/mentions> rdf:type owl:ObjectProperty .
+
+
+###  https://schema.org/workFeatured
+<https://schema.org/workFeatured> rdf:type owl:ObjectProperty .
+
+
+###  https://www.wikidata.org/wiki/Property:P161
+<https://www.wikidata.org/wiki/Property:P161> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain a:Film ;
+                                              rdfs:range :Actor ;
+                                              rdfs:label "castMember" .
+
+
+###  https://www.wikidata.org/wiki/Property:P162
+<https://www.wikidata.org/wiki/Property:P162> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain a:Film ;
+                                              rdfs:range a:producer ;
+                                              rdfs:label "producer" .
+
+
+###  https://www.wikidata.org/wiki/Property:P166
+<https://www.wikidata.org/wiki/Property:P166> rdf:type owl:ObjectProperty ;
+                                              rdfs:label "awardReceived" .
+
+
+###  https://www.wikidata.org/wiki/Property:P57
+<https://www.wikidata.org/wiki/Property:P57> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain a:Film ;
+                                             rdfs:range :Director ;
+                                             rdfs:label "director" .
+
+
+###  https://www.wikidata.org/wiki/Property:P58
+<https://www.wikidata.org/wiki/Property:P58> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain a:Film ;
+                                             rdfs:range a:Writer ;
+                                             rdfs:label "screenwriter" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/format
+<http://purl.org/dc/terms/format> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/type
+<http://purl.org/dc/terms/type> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#dbpediaLink
+:dbpediaLink rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Person .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#wikidataLink
+:wikidataLink rdf:type owl:DatatypeProperty ;
+              rdfs:domain a:Film ,
+                          :Person .
+
+
+###  https://schema.org/abstract
+<https://schema.org/abstract> rdf:type owl:DatatypeProperty ;
+                              rdfs:domain a:Film ,
+                                          a:Film_Festival_Section ,
+                                          :TV_Show .
+
+
+###  https://schema.org/datePublished
+<https://schema.org/datePublished> rdf:type owl:DatatypeProperty .
+
+
+###  https://schema.org/description
+<https://schema.org/description> rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain a:Film_Festival_Award .
+
+
+###  https://www.wikidata.org/wiki/Q36279
+<https://www.wikidata.org/wiki/Q36279> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain :Person ;
+                                       rdfs:label "biography" .
+
+
+###  https://www.wikidata.org/wiki/Property:P136
+<https://www.wikidata.org/wiki/Property:P136> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain a:Film ;
+                                              rdfs:label "genre" .
+
+
+###  https://www.wikidata.org/wiki/Property:P1476
+<https://www.wikidata.org/wiki/Property:P1476> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain a:Film ,
+                                                           a:Film_Festival_Award ,
+                                                           a:Film_Festival_Section ,
+                                                           :TV_Show ;
+                                               rdfs:label "title" .
+
+
+###  https://www.wikidata.org/wiki/Property:P2047
+<https://www.wikidata.org/wiki/Property:P2047> rdf:type owl:DatatypeProperty ;
+                                               rdfs:label "duration" .
+
+
+###  https://www.wikidata.org/wiki/Property:P2561
+<https://www.wikidata.org/wiki/Property:P2561> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :Person ;
+                                               rdfs:label "name" .
+
+
+###  https://www.wikidata.org/wiki/Property:P27
+<https://www.wikidata.org/wiki/Property:P27> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain :Person ;
+                                             rdfs:label "nacionality" .
+
+
+###  https://www.wikidata.org/wiki/Property:P345
+<https://www.wikidata.org/wiki/Property:P345> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain a:Film ,
+                                                          :Person ;
+                                              rdfs:label "IMDb Id" .
+
+
+###  https://www.wikidata.org/wiki/Property:P364
+<https://www.wikidata.org/wiki/Property:P364> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain a:Film ;
+                                              rdfs:label "originalLanguage" .
+
+
+###  https://www.wikidata.org/wiki/Property:P393
+<https://www.wikidata.org/wiki/Property:P393> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain a:Film_Festival_Edition ;
+                                              rdfs:label "editionNumber" .
+
+
+###  https://www.wikidata.org/wiki/Property:P495
+<https://www.wikidata.org/wiki/Property:P495> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain a:Film ;
+                                              rdfs:label "countryOfOrigin" .
+
+
+###  https://www.wikidata.org/wiki/Property:P569
+<https://www.wikidata.org/wiki/Property:P569> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain :Person ;
+                                              rdfs:label "birthDate" .
+
+
+###  https://www.wikidata.org/wiki/Property:P570
+<https://www.wikidata.org/wiki/Property:P570> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain :Person ;
+                                              rdfs:label "deathDate" .
+
+
+###  https://www.wikidata.org/wiki/Property:P577
+<https://www.wikidata.org/wiki/Property:P577> rdf:type owl:DatatypeProperty ;
+                                              rdfs:label "releaseDate" .
+
+
+###  https://www.wikidata.org/wiki/Property:P580
+<https://www.wikidata.org/wiki/Property:P580> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain a:Film_Festival_Edition ;
+                                              rdfs:label "startTime" .
+
+
+###  https://www.wikidata.org/wiki/Property:P582
+<https://www.wikidata.org/wiki/Property:P582> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain a:Film_Festival_Edition ;
+                                              rdfs:label "endTime" .
+
+
+###  https://www.wikidata.org/wiki/Property:P585
+<https://www.wikidata.org/wiki/Property:P585> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain a:Film_Festival_Edition ;
+                                              rdfs:label "PointInTime" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.cidoc-crm.org/cidoc-crm/E41_Appellation
+<http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E42_Identifier
+<http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E74_Group
+<http://www.cidoc-crm.org/cidoc-crm/E74_Group> rdf:type owl:Class ;
+                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> ;
+                                                                 owl:allValuesFrom <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation>
+                                                               ] .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E78_Curated_Holding
+<http://www.cidoc-crm.org/cidoc-crm/E78_Curated_Holding> rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity
+<http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity> rdf:type owl:Class .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D13_Digital_Information_Carrier
+<http://www.ics.forth.gr/isl/CRMdig/D13_Digital_Information_Carrier> rdf:type owl:Class .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object
+<http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> rdf:type owl:Class ;
+                                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> ;
+                                                                         owl:allValuesFrom <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier>
+                                                                       ] .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Actor
+:Actor rdf:type owl:Class ;
+       rdfs:subClassOf :Person ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                         owl:allValuesFrom :Performance_Award
+                       ] .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Direction_Award
+:Direction_Award rdf:type owl:Class ;
+                 rdfs:subClassOf a:Film_Festival_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Director
+:Director rdf:type owl:Class ;
+          rdfs:subClassOf :Person ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                            owl:allValuesFrom :Direction_Award
+                          ] .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Environmental_and_Innovation_Award
+:Environmental_and_Innovation_Award rdf:type owl:Class ;
+                                    rdfs:subClassOf a:Film_Festival_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Feature_Film_Award
+:Feature_Film_Award rdf:type owl:Class ;
+                    rdfs:subClassOf a:Film_Festival_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film
+a:Film rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://schema.org/associatedMedia> ;
+                        owl:allValuesFrom <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object>
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://schema.org/workFeatured> ;
+                        owl:allValuesFrom a:Film_Festival_Edition
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://schema.org/workFeatured> ;
+                        owl:allValuesFrom a:Film_Festival_Section
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                        owl:allValuesFrom :Environmental_and_Innovation_Award
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                        owl:allValuesFrom :Feature_Film_Award
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                        owl:allValuesFrom :Short_Film_Award
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                        owl:allValuesFrom :Special_Prize
+                      ] ;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fa-solid fa-film" ;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A Film is a collection of moving images." ;
+      rdfs:label "Locarno Film Festival Film" .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film_Festival_Award
+a:Film_Festival_Award rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film_Festival_Edition
+a:Film_Festival_Edition rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film_Festival_Section
+a:Film_Festival_Section rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Performance_Award
+:Performance_Award rdf:type owl:Class ;
+                   rdfs:subClassOf a:Film_Festival_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Producer
+a:producer rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Short_Film_Award
+:Short_Film_Award rdf:type owl:Class ;
+                  rdfs:subClassOf a:Film_Festival_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Special_Prize
+:Special_Prize rdf:type owl:Class ;
+               rdfs:subClassOf a:Film_Festival_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#TV_Show
+:TV_Show rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://schema.org/associatedMedia> ;
+                           owl:allValuesFrom <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://schema.org/mentions> ;
+                           owl:allValuesFrom a:Film
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://schema.org/mentions> ;
+                           owl:allValuesFrom :Person
+                         ] .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Writer
+a:Writer rdf:type owl:Class ;
+        rdfs:subClassOf :Person .
+
+
+###  https://purl.org/episa/archonto/ARE13
+<https://purl.org/episa/archonto/ARE13> rdf:type owl:Class .
+
+
+###  https://purl.org/episa/archonto/ARE5
+<https://purl.org/episa/archonto/ARE5> rdf:type owl:Class .
+
+
+###  https://purl.org/episa/archonto/data_object/DOE8
+<https://purl.org/episa/archonto/data_object/DOE8> rdf:type owl:Class .
+
+
+
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
