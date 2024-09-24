@@ -1,4 +1,4 @@
-@prefix : <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/> .
+@prefix : <http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -6,9 +6,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/> .
 
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl> rdf:type owl:Ontology ;
-                                                                                            owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core> ,
-                                                                                                        <http://data.sparna.fr/ontologies/sparnatural-config-datasources> .
+<http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82> rdf:type owl:Ontology ;
+                                                                           owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core> .
 
 #################################################################
 #    Object Properties
@@ -40,36 +39,6 @@
 <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/Film_Festival_Award
-:Film_Festival_Award rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> .
-
-
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/Film_Festival_Edition
-:Film_Festival_Edition rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> .
-
-
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/Film_Festival_Section
-:Film_Festival_Section rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> .
-
-
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/Person
-:Person rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> .
-
-
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/TV_SHOW
-:TV_SHOW rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> .
-
-
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/TV_Show
-:TV_Show rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> .
-
-
 ###  https://ontome.net/property/1263/namespace/47
 <https://ontome.net/property/1263/namespace/47> rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> ;
@@ -87,15 +56,10 @@
                                                         rdfs:range <https://purl.org/episa/archonto/data_object/DOE8> .
 
 
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl#:Person
-:Person rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> .
-
-
 ###  https://schema.org/BroadcastEvent
 <https://schema.org/BroadcastEvent> rdf:type owl:ObjectProperty ;
-                                    rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/TV_Show> ;
-                                    rdfs:range <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Edition> .
+                                    rdfs:domain :TV_Show ;
+                                    rdfs:range :Film_Festival_Edition .
 
 
 ###  https://schema.org/associatedMedia
@@ -112,15 +76,15 @@
 
 ###  https://www.wikidata.org/wiki/Property:P161
 <https://www.wikidata.org/wiki/Property:P161> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ;
-                                              rdfs:range <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Actor> ;
+                                              rdfs:domain :Film ;
+                                              rdfs:range :Actor ;
                                               rdfs:label "castMember" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P162
 <https://www.wikidata.org/wiki/Property:P162> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ;
-                                              rdfs:range <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/producer> ;
+                                              rdfs:domain :Film ;
+                                              rdfs:range :Producer ;
                                               rdfs:label "producer" .
 
 
@@ -131,15 +95,15 @@
 
 ###  https://www.wikidata.org/wiki/Property:P57
 <https://www.wikidata.org/wiki/Property:P57> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ;
-                                             rdfs:range <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Director> ;
+                                             rdfs:domain :Film ;
+                                             rdfs:range :Director ;
                                              rdfs:label "director" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P58
 <https://www.wikidata.org/wiki/Property:P58> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ;
-                                             rdfs:range <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Writer> ;
+                                             rdfs:domain :Film ;
+                                             rdfs:range :Writer ;
                                              rdfs:label "screenwriter" .
 
 
@@ -163,22 +127,22 @@
 <http://purl.org/dc/terms/type> rdf:type owl:DatatypeProperty .
 
 
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/dbpediaLink
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/dbpediaLink> rdf:type owl:DatatypeProperty ;
-                                                                                                       rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> .
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#dbpediaLink
+:dbpediaLink rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Person .
 
 
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/wikidataLink
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/wikidataLink> rdf:type owl:DatatypeProperty ;
-                                                                                                        rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ,
-                                                                                                                    <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> .
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#wikidataLink
+:wikidataLink rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Film ,
+                          :Person .
 
 
 ###  https://schema.org/abstract
 <https://schema.org/abstract> rdf:type owl:DatatypeProperty ;
-                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ,
-                                          <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Section> ,
-                                          <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/TV_Show> .
+                              rdfs:domain :Film ,
+                                          :Film_Festival_Section ,
+                                          :TV_Show .
 
 
 ###  https://schema.org/datePublished
@@ -187,27 +151,27 @@
 
 ###  https://schema.org/description
 <https://schema.org/description> rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award> .
+                                 rdfs:domain :Film_Festival_Award .
 
 
 ###  https://www.wikidata.org/wiki/Q36279
 <https://www.wikidata.org/wiki/Q36279> rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> ;
+                                       rdfs:domain :Person ;
                                        rdfs:label "biography" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P136
 <https://www.wikidata.org/wiki/Property:P136> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ;
+                                              rdfs:domain :Film ;
                                               rdfs:label "genre" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P1476
 <https://www.wikidata.org/wiki/Property:P1476> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ,
-                                                           <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award> ,
-                                                           <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Section> ,
-                                                           <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/TV_Show> ;
+                                               rdfs:domain :Film ,
+                                                           :Film_Festival_Award ,
+                                                           :Film_Festival_Section ,
+                                                           :TV_Show ;
                                                rdfs:label "title" .
 
 
@@ -218,50 +182,50 @@
 
 ###  https://www.wikidata.org/wiki/Property:P2561
 <https://www.wikidata.org/wiki/Property:P2561> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> ;
+                                               rdfs:domain :Person ;
                                                rdfs:label "name" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P27
 <https://www.wikidata.org/wiki/Property:P27> rdf:type owl:DatatypeProperty ;
-                                             rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> ;
+                                             rdfs:domain :Person ;
                                              rdfs:label "nacionality" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P345
 <https://www.wikidata.org/wiki/Property:P345> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ,
-                                                          <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> ;
+                                              rdfs:domain :Film ,
+                                                          :Person ;
                                               rdfs:label "IMDb Id" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P364
 <https://www.wikidata.org/wiki/Property:P364> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ;
+                                              rdfs:domain :Film ;
                                               rdfs:label "originalLanguage" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P393
 <https://www.wikidata.org/wiki/Property:P393> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Edition> ;
+                                              rdfs:domain :Film_Festival_Edition ;
                                               rdfs:label "editionNumber" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P495
 <https://www.wikidata.org/wiki/Property:P495> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> ;
+                                              rdfs:domain :Film ;
                                               rdfs:label "countryOfOrigin" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P569
 <https://www.wikidata.org/wiki/Property:P569> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> ;
+                                              rdfs:domain :Person ;
                                               rdfs:label "birthDate" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P570
 <https://www.wikidata.org/wiki/Property:P570> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> ;
+                                              rdfs:domain :Person ;
                                               rdfs:label "deathDate" .
 
 
@@ -272,19 +236,19 @@
 
 ###  https://www.wikidata.org/wiki/Property:P580
 <https://www.wikidata.org/wiki/Property:P580> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Edition> ;
+                                              rdfs:domain :Film_Festival_Edition ;
                                               rdfs:label "startTime" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P582
 <https://www.wikidata.org/wiki/Property:P582> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Edition> ;
+                                              rdfs:domain :Film_Festival_Edition ;
                                               rdfs:label "endTime" .
 
 
 ###  https://www.wikidata.org/wiki/Property:P585
 <https://www.wikidata.org/wiki/Property:P585> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Edition> ;
+                                              rdfs:domain :Film_Festival_Edition ;
                                               rdfs:label "PointInTime" .
 
 
@@ -328,42 +292,129 @@
                                                                        ] .
 
 
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/Film_Festival_Award
-:Film_Festival_Award rdf:type owl:Class ;
-                     rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> .
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Actor
+:Actor rdf:type owl:Class ;
+       rdfs:subClassOf :Person ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                         owl:allValuesFrom :Performance_Award
+                       ] .
 
 
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/Film_Festival_Edition
-:Film_Festival_Edition rdf:type owl:Class ;
-                       rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> .
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Direction_Award
+:Direction_Award rdf:type owl:Class ;
+                 rdfs:subClassOf :Film_Festival_Award .
 
 
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/Film_Festival_Section
-:Film_Festival_Section rdf:type owl:Class ;
-                       rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> .
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Director
+:Director rdf:type owl:Class ;
+          rdfs:subClassOf :Person ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                            owl:allValuesFrom :Direction_Award
+                          ] .
 
 
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/Locarno_Film_Festival_Film
-:Locarno_Film_Festival_Film rdf:type owl:Class ;
-                            rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> .
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Environmental_and_Innovation_Award
+:Environmental_and_Innovation_Award rdf:type owl:Class ;
+                                    rdfs:subClassOf :Film_Festival_Award .
 
 
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/Person
-:Person rdf:type owl:Class ;
-        rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> .
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Feature_Film_Award
+:Feature_Film_Award rdf:type owl:Class ;
+                    rdfs:subClassOf :Film_Festival_Award .
 
 
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/TV_Show
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film
+:Film rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://schema.org/associatedMedia> ;
+                        owl:allValuesFrom <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object>
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://schema.org/workFeatured> ;
+                        owl:allValuesFrom :Film_Festival_Edition
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://schema.org/workFeatured> ;
+                        owl:allValuesFrom :Film_Festival_Section
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                        owl:allValuesFrom :Environmental_and_Innovation_Award
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                        owl:allValuesFrom :Feature_Film_Award
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                        owl:allValuesFrom :Short_Film_Award
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
+                        owl:allValuesFrom :Special_Prize
+                      ] ;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fa-solid fa-film" ;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A Film is a collection of moving images." ;
+      rdfs:label "Locarno Film Festival Film" .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film_Festival_Award
+:Film_Festival_Award rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film_Festival_Edition
+:Film_Festival_Edition rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film_Festival_Section
+:Film_Festival_Section rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Performance_Award
+:Performance_Award rdf:type owl:Class ;
+                   rdfs:subClassOf :Film_Festival_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Producer
+:Producer rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Short_Film_Award
+:Short_Film_Award rdf:type owl:Class ;
+                  rdfs:subClassOf :Film_Festival_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Special_Prize
+:Special_Prize rdf:type owl:Class ;
+               rdfs:subClassOf :Film_Festival_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#TV_Show
 :TV_Show rdf:type owl:Class ;
-         rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> .
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://schema.org/associatedMedia> ;
+                           owl:allValuesFrom <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://schema.org/mentions> ;
+                           owl:allValuesFrom :Film
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://schema.org/mentions> ;
+                           owl:allValuesFrom :Person
+                         ] .
 
 
-###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82/a:Person
-:a:Person rdf:type owl:Class ;
-          rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fa-solid fa-user" ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A person"@en ;
-          rdfs:label "A Person"@en .
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Writer
+:Writer rdf:type owl:Class ;
+        rdfs:subClassOf :Person .
 
 
 ###  https://purl.org/episa/archonto/ARE13
@@ -378,138 +429,111 @@
 <https://purl.org/episa/archonto/data_object/DOE8> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Actor
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Actor> rdf:type owl:Class ;
-                                                                                                 rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> ,
-                                                                                                                 [ rdf:type owl:Restriction ;
-                                                                                                                   owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
-                                                                                                                   owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Performance_Award>
-                                                                                                                 ] .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Direction_Award
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Direction_Award> rdf:type owl:Class ;
-                                                                                                           rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award> .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Director
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Director> rdf:type owl:Class ;
-                                                                                                    rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> ,
-                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                      owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
-                                                                                                                      owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Direction_Award>
-                                                                                                                    ] .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Environmental_and_Innovation_Award
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Environmental_and_Innovation_Award> rdf:type owl:Class ;
-                                                                                                                              rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award> .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Feature_Film_Award
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Feature_Film_Award> rdf:type owl:Class ;
-                                                                                                              rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award> .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film> rdf:type owl:Class ;
-                                                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                                  owl:onProperty <https://schema.org/associatedMedia> ;
-                                                                                                                  owl:allValuesFrom <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object>
-                                                                                                                ] ,
-                                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                                  owl:onProperty <https://schema.org/workFeatured> ;
-                                                                                                                  owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Edition>
-                                                                                                                ] ,
-                                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                                  owl:onProperty <https://schema.org/workFeatured> ;
-                                                                                                                  owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Section>
-                                                                                                                ] ,
-                                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                                  owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
-                                                                                                                  owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Environmental_and_Innovation_Award>
-                                                                                                                ] ,
-                                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                                  owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
-                                                                                                                  owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Feature_Film_Award>
-                                                                                                                ] ,
-                                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                                  owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
-                                                                                                                  owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Short_Film_Award>
-                                                                                                                ] ,
-                                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                                  owl:onProperty <https://www.wikidata.org/wiki/Property:P166> ;
-                                                                                                                  owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Special_Prize>
-                                                                                                                ] ;
-                                                                                                <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fa-solid fa-film" ;
-                                                                                                <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A Film is a collection of moving images." ;
-                                                                                                rdfs:label "Locarno Film Festival Film" .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award> rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Edition
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Edition> rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Section
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Section> rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Performance_Award
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Performance_Award> rdf:type owl:Class ;
-                                                                                                             rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award> .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Short_Film_Award
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Short_Film_Award> rdf:type owl:Class ;
-                                                                                                            rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award> .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Special_Prize
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Special_Prize> rdf:type owl:Class ;
-                                                                                                         rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film_Festival_Award> .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/TV_Show
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/TV_Show> rdf:type owl:Class ;
-                                                                                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty <https://schema.org/associatedMedia> ;
-                                                                                                                     owl:allValuesFrom <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object>
-                                                                                                                   ] ,
-                                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty <https://schema.org/mentions> ;
-                                                                                                                     owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Film>
-                                                                                                                   ] ,
-                                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty <https://schema.org/mentions> ;
-                                                                                                                     owl:allValuesFrom <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person>
-                                                                                                                   ] .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Writer
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Writer> rdf:type owl:Class ;
-                                                                                                  rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> .
-
-
-###  https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/producer
-<https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/producer> rdf:type owl:Class ;
-                                                                                                    rdfs:subClassOf <https://raw.githubusercontent.com/gprendi/be_ir/refs/heads/main/src/indexing/ord.bak.ttl/Person> .
-
-
 #################################################################
-#    Annotations
+#    Individuals
 #################################################################
 
-:TV_Show <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fa-solid-fa-user"@en ;
-         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "TV SHOW"@en ;
-         rdfs:label "TV_Show"@en .
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Biographic_Drama
+:Biographic_Drama rdf:type owl:NamedIndividual ,
+                           <https://purl.org/episa/archonto/ARE13> .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Concorso_Internazionale
+:Concorso_Internazionale rdf:type owl:NamedIndividual ,
+                                  :Film_Festival_Section .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film_File_Stepne
+:Film_File_Stepne rdf:type owl:NamedIndividual ,
+                           <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> ;
+                  <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> :LFF_Palmares_Id_18800962-9f85-4a5e-9a8d-3225857f2312 .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Film_File_The_Song_of_Bernadette
+:Film_File_The_Song_of_Bernadette rdf:type owl:NamedIndividual ,
+                                           <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> ;
+                                  <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> :LFF_Id_241637 ;
+                                  <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> :Biographic_Drama ;
+                                  <https://ontome.net/property/1263/namespace/47> :Locarno_Film_Festival_Archive_Database .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Henry_King
+:Henry_King rdf:type owl:NamedIndividual ,
+                     :Director .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#LFF_Edition_1946
+:LFF_Edition_1946 rdf:type owl:NamedIndividual ,
+                           :Film_Festival_Edition .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#LFF_Edition_2023
+:LFF_Edition_2023 rdf:type owl:NamedIndividual ,
+                           :Film_Festival_Edition .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#LFF_Id_241637
+:LFF_Id_241637 rdf:type owl:NamedIndividual ,
+                        <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> ;
+               <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> :Locarno_Film_Festival_Archive .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#LFF_Palmares_Id_18800962-9f85-4a5e-9a8d-3225857f2312
+:LFF_Palmares_Id_18800962-9f85-4a5e-9a8d-3225857f2312 rdf:type owl:NamedIndividual ,
+                                                               <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Locarno_Film_Festival_Archive
+:Locarno_Film_Festival_Archive rdf:type owl:NamedIndividual ,
+                                        <https://purl.org/episa/archonto/ARE5> .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Locarno_Film_Festival_Archive_Database
+:Locarno_Film_Festival_Archive_Database rdf:type owl:NamedIndividual ,
+                                                 <http://www.ics.forth.gr/isl/CRMdig/D13_Digital_Information_Carrier> .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Main_Program
+:Main_Program rdf:type owl:NamedIndividual ,
+                       :Film_Festival_Section .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Maryna_Vroda
+:Maryna_Vroda rdf:type owl:NamedIndividual ,
+                       :Director ;
+              <https://www.wikidata.org/wiki/Property:P166> :Pardo_for_Best_Direction_of_the_City_and_Region_of_Locarno .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Pardo_for_Best_Direction_of_the_City_and_Region_of_Locarno
+:Pardo_for_Best_Direction_of_the_City_and_Region_of_Locarno rdf:type owl:NamedIndividual ,
+                                                                     :Direction_Award .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#RSI_Archive_Database
+:RSI_Archive_Database rdf:type owl:NamedIndividual ,
+                               <http://www.ics.forth.gr/isl/CRMdig/D13_Digital_Information_Carrier> .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#Stepne
+:Stepne rdf:type owl:NamedIndividual ,
+                 :Film ;
+        <https://schema.org/workFeatured> :Concorso_Internazionale ,
+                                          :LFF_Edition_2023 ;
+        <https://www.wikidata.org/wiki/Property:P57> :Maryna_Vroda ;
+        <https://www.wikidata.org/wiki/Property:P2047> "114 minutes" ;
+        <https://www.wikidata.org/wiki/Property:P495> "Ukraine" ;
+        <https://www.wikidata.org/wiki/Property:P577> 2023 .
+
+
+###  http://www.semanticweb.org/betin/ontologies/2024/6/untitled-ontology-82#The_Song_of_Bernadette
+:The_Song_of_Bernadette rdf:type owl:NamedIndividual ,
+                                 :Film ;
+                        <https://schema.org/associatedMedia> :Film_File_The_Song_of_Bernadette ;
+                        <https://schema.org/workFeatured> :LFF_Edition_1946 ,
+                                                          :Main_Program ;
+                        <https://www.wikidata.org/wiki/Property:P57> :Henry_King ;
+                        <https://www.wikidata.org/wiki/Property:P495> "The United States" ;
+                        <https://www.wikidata.org/wiki/Property:P577> 1943 .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
